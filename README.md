@@ -1,56 +1,221 @@
-# Welcome to your Expo app 👋
+# Aora
 
-This is an [Expo](https://expo.dev) project created with [`create-expo-app`](https://www.npmjs.com/package/create-expo-app).
+A modern video-sharing mobile application built with **React Native, Expo, NativeWind, and Appwrite**.
 
-## Get started
+Aora allows users to authenticate, browse videos, search content, bookmark videos, view profiles, and publish video content.
 
-1. Install dependencies
+## 📱 Features
 
-   ```bash
-   npm install
-   ```
+* 🔐 User authentication
+* 🏠 Home video feed
+* 🔎 Video search
+* 🎥 Video creation and publishing
+* 🔖 Bookmark videos
+* 👤 User profile
+* 🌙 Light and dark theme support
+* 📱 Responsive mobile UI
+* ☁️ Appwrite backend integration
+* 💾 Persistent authentication and bookmarks
 
-2. Start the app
+## 🛠️ Tech Stack
 
-   ```bash
-   npx expo start
-   ```
+### Frontend
 
-In the output, you'll find options to open the app in a
+* React Native
+* Expo
+* Expo Router
+* TypeScript
+* NativeWind
+* Tailwind CSS
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+### Backend
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+* Appwrite
+* Appwrite Database
+* Appwrite Storage
 
-## Get a fresh project
+### Libraries
 
-When you're ready, run:
+* `expo-image-picker`
+* `expo-video`
+* `expo-font`
+* `@react-native-async-storage/async-storage`
+* `react-native-appwrite`
 
-```bash
-npm run reset-project
+## 📂 Project Structure
+
+```text
+Aora/
+├── assets/
+│   └── fonts/
+│
+├── src/
+│   ├── app/
+│   │   ├── (auth)/
+│   │   │   ├── login.tsx
+│   │   │   └── signup.tsx
+│   │   │
+│   │   ├── (tabs)/
+│   │   │   ├── index.tsx
+│   │   │   ├── search.tsx
+│   │   │   ├── create.tsx
+│   │   │   ├── bookmark.tsx
+│   │   │   └── profile.tsx
+│   │   │
+│   │   ├── video/
+│   │   │   └── [id].tsx
+│   │   │
+│   │   ├── explore.tsx
+│   │   └── _layout.tsx
+│   │
+│   ├── components/
+│   ├── context/
+│   │   ├── AuthContext.tsx
+│   │   └── BookmarkContext.tsx
+│   │
+│   └── ...
+│
+├── app.json
+├── package.json
+├── tailwind.config.js
+└── tsconfig.json
 ```
 
-This command will move the starter code to the **app-example** directory and create a blank **app** directory where you can start developing.
+## 🚀 Getting Started
 
-### Other setup steps
+### 1. Clone the repository
 
-- To set up ESLint for linting, run `npx expo lint`, or follow our guide on ["Using ESLint and Prettier"](https://docs.expo.dev/guides/using-eslint/)
-- If you'd like to set up unit testing, follow our guide on ["Unit Testing with Jest"](https://docs.expo.dev/develop/unit-testing/)
-- Learn more about the TypeScript setup in this template in our guide on ["Using TypeScript"](https://docs.expo.dev/guides/typescript/)
+```bash
+git clone https://github.com/MIDHUNcode/Aora.git
+```
 
-## Learn more
+```bash
+cd Aora
+```
 
-To learn more about developing your project with Expo, look at the following resources:
+### 2. Install dependencies
 
-- [Expo documentation](https://docs.expo.dev/): Learn fundamentals, or go into advanced topics with our [guides](https://docs.expo.dev/guides).
-- [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
+```bash
+npm install
+```
 
-## Join the community
+### 3. Configure Appwrite
 
-Join our community of developers creating universal apps.
+Create an Appwrite project and configure the required:
 
-- [Expo on GitHub](https://github.com/expo/expo): View our open source platform and contribute.
-- [Discord community](https://chat.expo.dev): Chat with Expo users and ask questions.
+* Project ID
+* Endpoint
+* Database
+* Tables
+* Storage bucket
+
+Add the required configuration to your project according to your local setup.
+
+> Do not commit API keys, secrets, or private credentials to GitHub.
+
+### 4. Start the development server
+
+```bash
+npx expo start
+```
+
+You can then run the application using:
+
+* Android Emulator
+* Physical Android device
+* Expo development environment
+
+## 🔐 Authentication
+
+Aora uses Appwrite for authentication.
+
+The application also maintains authentication state locally so users can remain signed in between app sessions.
+
+## ☁️ Appwrite
+
+Appwrite is used as the backend service for Aora.
+
+Current backend usage includes:
+
+```text
+Authentication
+      ↓
+Appwrite
+
+Video Data
+      ↓
+Appwrite Database
+
+Video / Media Files
+      ↓
+Appwrite Storage
+```
+
+## 🎨 UI
+
+Aora uses **NativeWind** with Tailwind CSS for styling.
+
+The application also supports theme-aware screens for both light and dark appearance.
+
+## 📸 Screens
+
+Add screenshots of your application here:
+
+```text
+screenshots/
+├── get-started.png
+├── login.png
+├── home.png
+├── search.png
+├── create.png
+├── bookmark.png
+└── profile.png
+```
+
+Example:
+
+![Aora Home Screen](screenshots/home.png)
+
+## 🧪 Development
+
+Check TypeScript:
+
+```bash
+npx tsc --noEmit
+```
+
+Check Expo project:
+
+```bash
+npx expo-doctor
+```
+
+Clear Metro cache:
+
+```bash
+npx expo start -c
+```
+
+## 🔮 Future Improvements
+
+* Video upload optimization
+* Video likes and comments
+* Follow/unfollow creators
+* Improved video recommendations
+* Push notifications
+* User profile editing
+* Video categories
+* More advanced search and filtering
+* Improved media management
+
+## 👨‍💻 Author
+
+**Midhun G**
+
+MERN Stack Developer | React Native Developer
+
+GitHub: [MIDHUNcode](https://github.com/MIDHUNcode)
+
+## 📄 License
+
+This project is created for learning, development, and portfolio purposes.
